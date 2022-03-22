@@ -1,0 +1,45 @@
+﻿@model Cliente
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    <form asp-action="Editar" method="post">
+    <div class="form-group">
+        <label asp-for="Nombre" class="control-label"></label>
+        <input asp-for="Nombre" class="form-control" placeholder="Nombre" />
+        <span asp-validation-for="Nombre" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Apellido" class="control-label"></label>
+        <input asp-for="Apellido" class="form-control" placeholder="Apellido" />
+        <span asp-validation-for="Apellido" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Direccion" class="control-label"></label>
+        <input asp-for="Direccion" class="form-control" placeholder="Direccion" />
+        <span asp-validation-for="Direccion" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Telefono" class="control-label"></label>
+        <input asp-for="Telefono" class="form-control" placeholder="Telefono" />
+    </div>
+    <input type="submit" value="Guardar" class="btn btn-primary" />
+    </form>
+    <form enctype = "multipart/form-data" method= "post">
+        <dl>
+            <dt>
+                <label>
+                
+                </label>
+            </dt>
+            <dd>
+                <input class="files" type="file">
+            </dd>
+        </dl>
+        <input class="btn" type="submit" value="subir">
+    </form>
+}
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
